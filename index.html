@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUNSHINE SHOP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+     <div class="logo">
+    <img src="logo.png" alt="Flower Logo">
+    <span>SUNSHINE SHOP</span>
+  </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home☘️</a></li>
+        <li><a href="#about">About Us🪻</a></li>
+        <li><a href="#products">Products🌻</a></li>
+        <li><a href="#reviews">Reviews⭐️</a></li>
+        <li><a href="#gallery">Gallery📸</a></li>
+        <li><a href="#blog">Blog📌</a></li>
+        <li><a href="#contact">Contact📞</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home">
+    <h1>Welcome to SUNSHINE SHOP</h1>
+    <p>Fresh and beautiful flowers for every occasion.💐</p>
+    <button class="order-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      Order Now
+    </button>
+  </section>
+
+  <!-- Delivery Info (bawah Home) -->
+  <section id="delivery-info">
+    <h2>🚚Delivery Info</h2>
+    <div class="delivery-grid">
+      <div class="delivery-item">
+        <div class="delivery-emoji">🗺️</div>
+        <div>
+          <b>Coverage</b>
+          <p>Penang & kawasan sekitar</p>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-emoji">💸</div>
+        <div>
+          <b>Caj</b>
+          <p>RM10–30 (ikut lokasi)</p>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-emoji">⏰</div>
+        <div>
+          <b>Masa</b>
+          <p>10:00 AM – 6:00 PM</p>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-emoji">⚡</div>
+        <div>
+          <b>Same-Day</b>
+          <p>Order sebelum 2 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <h2>🌸About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p><strong>SUNSHINE SHOP</strong> is a flower boutique based in Penang, Malaysia. 
+          We specialize in fresh flowers, bouquets, and floral decorations for all occasions.</p>
+          
+          <h3>Our Mission</h3>
+          <p>To bring happiness and brighten lives with beautiful and affordable flowers.</p>
+
+          <h3>Why Choose Us?</h3>
+          <ul>
+            <li>🌷 Freshly picked flowers every day</li>
+            <li>💐 Creative and unique bouquet designs</li>
+            <li>🚚 Fast and reliable delivery</li>
+            <li>😊 Friendly customer service</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img src="shop.jpg" alt="Flower Shop">
+          <button class="order-btn" onclick="toggleSection('about-flowers')">About Flowers</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Flowers (toggle) -->
+  <section id="about-flowers" class="about-flowers hidden">
+    <div class="about-flowers-container">
+      <h2>🪻About flowers</h2>
+      <div class="about-flowers-content">
+        <div class="flowers-text">
+          <p>Flowers bring beauty, love, and joy into our lives.  
+          At <strong>SUNSHINE SHOP</strong>, each flower is chosen with care to brighten your special moments.</p>
+          <ul>
+            <li>🌹 <strong>Roses</strong> — Love & romance</li>
+            <li>🌻 <strong>Sunflowers</strong> — Joy & positivity</li>
+            <li>🌷 <strong>Tulips</strong> — Elegance</li>
+            <li>🌼 <strong>Daisy</strong> — Friendship</li>
+            <li>🌸 <strong>Lily</strong> — Purity</li>
+            <li>🌺 <strong>Orchid</strong> — Beauty</li>
+            <li>💐 <strong>Carnations</strong> — Admiration</li>
+            <li>🌹 <strong>Peony</strong> — Prosperity</li>
+            <li>🌿 <strong>Lavender</strong> — Calmness</li>
+          </ul>
+        </div>
+        <div class="flowers-image">
+          <!-- Pastikan gambar ini wujud dalam folder project -->
+          <img src="123.jpg" alt="Beautiful Flowers">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products">
+    <h1>✨Our Products</h1>
+
+    <!-- Category Buttons (bawah title) -->
+    <div class="category-buttons">
+      <div class="cat-btn active" data-category="all" onclick="filterCategory('all')">All</div>
+      <div class="cat-btn" data-category="bouquet" onclick="filterCategory('bouquet')">Bouquet</div>
+      <div class="cat-btn" data-category="fresh" onclick="filterCategory('fresh')">Fresh</div>
+      <div class="cat-btn" data-category="event" onclick="filterCategory('event')">Event</div>
+    </div>
+
+    <div class="product-container">
+      <!-- Bouquet -->
+      <div class="product" data-category="bouquet" data-price="150">
+        <img src="10.jpg" alt="Red Roses Bouquet">
+        <p class="prod-name">Red Roses Bouquet</p>
+        <p class="price">RM150</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+<div class="cart-box" onclick="addToCart('Red Roses Bouquet',150,this)">🛒</div>
+</div>
+
+      <div class="product" data-category="bouquet" data-price="160">
+        <img src="2.jpg" alt="Mixed Tulips Bouquet">
+        <p class="prod-name">Mixed Tulips Bouquet</p>
+        <p class="price">RM160</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('Mixed Tulips Bouquet',160,this)">🛒</div>
+      </div>
+
+      <div class="product" data-category="bouquet" data-price="160">
+        <img src="13.jpg" alt="Pink Carnations Bouquet">
+        <p class="prod-name">Pink Carnations Bouquet</p>
+        <p class="price">RM160</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('Pink Carnations Bouquet',160,this)">🛒</div>
+      </div>
+
+      <div class="product" data-category="bouquet" data-price="160">
+        <img src="9.jpg" alt="Peony Bouquet">
+        <p class="prod-name">Peony Bouquet</p>
+        <p class="price">RM160</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('Peony Bouquet',160,this)">🛒</div>
+      </div>
+
+      <div class="product" data-category="bouquet" data-price="158">
+        <img src="8.jpg" alt="Mixed Color Bouquet">
+        <p class="prod-name">Mixed Color Bouquet</p>
+        <p class="price">RM158</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('Mixed Color Bouquet',158,this)">🛒</div>
+      </div>
+
+      <!-- Fresh -->
+      <div class="product" data-category="fresh" data-price="153">
+        <img src="1.jpg" alt="White Lilies">
+        <p class="prod-name">White Lilies</p>
+        <p class="price">RM153</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('White Lilies',153,this)">🛒</div>
+      </div>
+
+      <div class="product" data-category="fresh" data-price="120">
+        <img src="12.jpg" alt="Bright Sunflowers">
+        <p class="prod-name">Bright Sunflowers</p>
+        <p class="price">RM120</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('Bright Sunflowers',120,this)">🛒</div>
+      </div>
+
+      <div class="product" data-category="fresh" data-price="102">
+        <img src="11.jpg" alt="Orchid">
+        <p class="prod-name">Orchid</p>
+        <p class="price">RM102</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('Orchid',102,this)">🛒</div>
+      </div>
+
+      <div class="product" data-category="fresh" data-price="160">
+        <img src="6.jpg" alt="White Daisies">
+        <p class="prod-name">White Daisies</p>
+        <p class="price">RM160</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('White Daisies',160,this)">🛒</div>
+      </div>
+
+      <div class="product" data-category="fresh" data-price="157">
+        <img src="3.jpg" alt="Fresh Lavender">
+        <p class="prod-name">Fresh Lavender</p>
+        <p class="price">RM157</p>
+        <div class="qty-control">
+  <button onclick="changeQty(this, -1)">-</button>
+  <input type="number" value="1" min="1">
+  <button onclick="changeQty(this, 1)">+</button>
+</div>
+        <div class="cart-box" onclick="addToCart('Fresh Lavender',157,this)">🛒</div>
+      </div>
+
+      <!-- Event -->
+      <div class="product" data-category="event" data-price="250">
+        <img src="wedding.jpg" alt="Wedding Flower Decoration">
+        <p class="prod-name">Wedding Flower Decoration</p>
+        <p class="price">RM250</p>
+        <div class="cart-box" onclick="addToCart('Wedding Flower Decoration',250)">🛒</div>
+      </div>
+
+      <div class="product" data-category="event" data-price="180">
+        <img src="birthday.jpg" alt="Birthday Flower Package">
+        <p class="prod-name">Birthday Flower Package</p>
+        <p class="price">RM180</p>
+        <div class="cart-box" onclick="addToCart('Birthday Flower Package',180)">🛒</div>
+      </div>
+    </div>
+
+    <!-- Offers button -->
+    <div class="offers-button-wrap">
+      <button class="order-btn offers-btn" onclick="toggleSection('offers')">Offers</button>
+    </div>
+  </section>
+
+<!-- Offers Section -->
+<div id="offers" class="offers hidden">
+  <div class="offers-container">
+    <h2>🌟Special Offers</h2>
+    <div class="offer-box">
+      <ul>
+        <li>✨ New Member Discount – Get 15% OFF on your first purchase!</li>
+        <li>🕒 Happy Hour Deal – 20% OFF from 2 PM – 5 PM daily</li>
+        <li>🎁 Buy 2 Bouquets, Save RM10</li>
+        <li>🚚 Free Delivery Over RM120</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!-- Reviews -->
+  <section id="reviews">
+    <h1>🍀Customer Reviews</h1>
+    <div class="review-container">
+      <div class="review">
+        <img src="2a.webp" alt="Customer A">
+        <h3>Stella Chin</h3>
+        <p>"Beautiful flowers and fast delivery! 🌸"</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="review">
+        <img src="1a.avif" alt="Customer B">
+        <h3>Jason Lee</h3>
+        <p>"My wife loved the roses, thank you Sunshine!"</p>
+        <div class="stars">⭐⭐⭐⭐</div>
+      </div>
+      <div class="review">
+        <img src="3a.webp" alt="Customer C">
+        <h3>Sally Ooi</h3>
+        <p>"Great service and fresh bouquets! 💕"</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+
+    <div class="faq-button-wrap">
+      <button class="order-btn faq-btn" onclick="toggleSection('faq')">FAQ</button>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <div id="faq" class="hidden">
+    <h2>🌺Frequently Asked Questions</h2>
+    <details>
+      <summary>Berapa lama bunga tahan?</summary>
+      <p>3–7 hari dengan penjagaan yang betul (tukar air & potong batang setiap hari).</p>
+    </details>
+    <details>
+      <summary>Adakah buat penghantaran luar Penang?</summary>
+      <p>Kami fokus area Penang dan kawasan berdekatan.</p>
+    </details>
+    <details>
+      <summary>Bila saya boleh dapat penghantaran?</summary>
+      <p>Pesanan sebelum 2 petang akan dihantar pada hari yang sama.</p>
+    </details>
+    <details>
+      <summary>Bolehkah saya pilih masa penghantaran?</summary>
+      <p>Ya, boleh pilih slot pagi/petang semasa checkout.</p>
+    </details>
+    <details>
+      <summary>Ada custom bouquet ikut bajet saya?</summary>
+      <p>Ya, kami buat custom mengikut bajet & tema warna anda.</p>
+    </details>
+    <details>
+      <summary>Ada servis untuk majlis kahwin atau event?</summary>
+      <p>Ya, kami sediakan dekorasi untuk pelbagai acara.</p>
+    </details>
+    <details>
+      <summary>Apakah kaedah pembayaran yang diterima?</summary>
+      <p>Online banking, kad kredit & e-wallet.</p>
+    </details>
+  </div>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h1>🌻Gallery</h1>
+    <p>Some of our favorite floral arrangements</p>
+    <div class="gallery-grid">
+      <img src="l.jpg" alt="Gallery Flower 1" width="400">
+      <img src="a.jpg" alt="Gallery Flower 2" width="400">
+      <img src="b.jpg" alt="Gallery Flower 3" width="400">
+      <img src="c.jpg" alt="Gallery Flower 4" width="400">
+      <img src="d.jpg" alt="Gallery Flower 5" width="400">
+      <img src="e.jpg" alt="Gallery Flower 6" width="400">
+      <img src="f.jpg" alt="Gallery Flower 7" width="400">
+      <img src="g.jpg" alt="Gallery Flower 8" width="400">
+      <img src="h.jpg" alt="Gallery Flower 9" width="400">
+      <img src="i.jpg" alt="Gallery Flower 10" width="400">
+      <img src="j.jpg" alt="Gallery Flower 11" width="400">
+      <img src="k.jpg" alt="Gallery Flower 12" width="400">
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog">
+    <h2 class="section-title">Flower Tips & Guides🥀</h2>
+    <div class="blog-container">
+      <div class="blog-post">
+        <img src="blog1.jpg" alt="How to keep flowers fresh">
+        <h3>How to Keep Flowers Fresh 🌹</h3>
+        <p>Fresh flowers last longer if kept in clean water and stems are trimmed daily.</p>
+        <p class="full-text hidden">Change the water every day, re-cut stems at 45°, keep away from direct sunlight & ripening fruits to avoid ethylene exposure.</p>
+        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More →</button>
+      </div>
+      <div class="blog-post">
+        <img src="blog2.jpg" alt="Flower colors & meanings">
+        <h3>Flower Colors & Meanings 💐</h3>
+        <p>Red = love, Yellow = friendship, White = purity, Purple = admiration.</p>
+        <p class="full-text hidden">Pink shows gratitude, orange for enthusiasm, and blue tones bring calm elegance to contemporary bouquets.</p>
+        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter">
+    <h2>🪷Join Our Newsletter</h2>
+    <p>Dapatkan promo & tips bunga terus ke email anda.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing! 🌸'); this.reset();">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h1>🌎Contact Us</h1>
+    <div class="contact-card">
+      <div class="contact-title">
+        <span class="badge">Reach us anytime</span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-row">
+            <div class="info-icon">📍</div>
+            <div class="info-text"><b>Address</b> Sunshine Shop, 123 Blossom Street, 11000 Penang</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text"><b>Phone</b> +60 12-345 6789</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">✉️</div>
+            <div class="info-text"><b>Email</b> sunshine@shop.com</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">⏰</div>
+            <div class="info-text"><b>Hours</b> Mon–Sun: 9:00 AM – 8:00 PM</div>
+          </div>
+        </div>
+
+        <div class="contact-media">
+          <img src="122.jpg" alt="Sunshine storefront">
+          <iframe title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Georgetown%20Penang&output=embed" height="220"></iframe>
+        </div>
+      </div>
+
+      <!-- Form Contact -->
+      <form class="contact-form" onsubmit="handleContactSubmit(event)">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit" class="order-btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer (cantik & lengkap) -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-cols">
+        <div class="fcol">
+          <h4>SUNSHINE SHOP</h4>
+          <p>Fresh and beautiful flowers for every occasion.</p>
+        </div>
+        <div class="fcol">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#delivery-info">Delivery</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Follow Us</h4>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="ig.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/" target="_blank">
+        <img src="fb.png" alt="Facebook">
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank">
+        <img src="tt.png" alt="TikTok">
+      </a>
+    </div>
+        </div>
+      </div>
+      <h2 class="copy">© 2025 SUNSHINE SHOP. All rights reserved. ❤️</h2>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <h2>🛒 Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p id="cartTotal">Total: RM0</p>
+    <button onclick="checkout()" class="order-btn">Checkout</button>
+    <button onclick="toggleCart()" class="order-btn close-btn">Close</button>
+  </div>
+
+  <!-- Cart Icon (kanan bawah) -->
+  <div id="cartIcon" class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div>
+
+ <!-- WhatsApp Button -->
+<a href="https://wa.me/60175518748?text=Hello%20SUNSHINE%20SHOP%20🌸%2C%20I’m%20interested%20in%20your%20flowers."
+   class="whatsapp-float" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+        alt="WhatsApp" />
+</a>
+
+  <!-- JS -->
+  <script src="java.js"></script>
+</body>
+</html>
